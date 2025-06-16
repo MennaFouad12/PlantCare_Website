@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Light Assessment for Plants</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f1f5f9;
+            color: #333;
+            line-height: 1.6;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #28a745;
+            text-transform: uppercase;
+        }
+
+        /* Form Styles */
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        select, input[type="file"], button {
+            font-size: 1.2rem;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #28a745;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        button {
+            background-color: #28a745;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* Image styles */
+        img {
+            max-width: 90%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        /* Result Message Styles */
+        .result {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .message {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            color: #d9534f; /* Default for error */
+        }
+
+        .good {
+            color: #28a745; /* Green for suitable */
+        }
+
+        .acceptable {
+            color: #f0ad4e; /* Orange for acceptable */
+        }
+
+        .not-suitable {
+            color: #d9534f; /* Red for not suitable */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            form {
+                width: 90%;
+            }
+
+            .result {
+                font-size: 1.1rem;
+            }
+
+            .message {
+                font-size: 1rem;
+            }
+        }
+
+        /* Footer styles */
+        footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Room Light for Plants</h1>
+    
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="plant">Choose a plant type:</label>
+        <select name="plant" id="plant" required>
+            <option value="Apple">Apple</option>
+            <option value="Cherry (including sour)">Cherry (including sour)</option>
+            <option value="Corn (maize)">Corn (maize)</option>
+            <option value="Grape">Grape</option>
+            <option value="Peach">Peach</option>
+            <option value="Pepper, bell">Pepper, bell</option>
+            <option value="Potato">Potato</option>
+            <option value="Strawberry">Strawberry</option>
+            <option value="Tomato">Tomato</option>
+        </select>
+        <input type="file" name="file" accept="image/*" required>
+        <button type="submit">Upload Image</button>
+    </form>
+
+    {% if uploaded_image %}
+{% if uploaded_image %}
+<div class="result">
+    <h2>Result</h2>
+    <img src="{{ url_for('static', filename='uploads/' ~ uploaded_image) }}" alt="Uploaded Image">
+    <p>Light percentage in the room: {{ brightness }}%</p>
+    <p class="message {{ css_class }}">{{ message }}</p>
+    <p>The best light range is above than {{ min_brightness }}</p> <!-- This should show 140 for Strawberry -->
+</div>
+{% elif message %}
+<p class="message {{ css_class }}">{{ message }}</p>
+{% endif %}
+
+    <footer>
+        <p>© 2024 Room Light for Plants | Created with care</p>
+    </footer>
+</body>
+</html>

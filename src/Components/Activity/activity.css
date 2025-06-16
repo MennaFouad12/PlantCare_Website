@@ -1,0 +1,36 @@
+.activityHeader {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 20px;
+}
+
+.activityTableWrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.activityTable {
+    
+    max-width: 1000px; /* الحد الأقصى للعرض */
+    margin-top: 60px;
+}
+
+.activityTable th, .activityTable td {
+    padding: 15px; /* زيادة التباعد داخل الخلايا */
+    font-size: 16px; /* تكبير الخط */
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.activityTable th {
+    background-color: #62d875;
+    color: black;
+}
+
+.activityTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+

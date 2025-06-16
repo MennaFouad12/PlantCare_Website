@@ -1,0 +1,247 @@
+/* عنوان الصفحة */
+.page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.text-2xl {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+    font-weight: 600;
+    position: relative;
+    top: 10px;
+    left: 120px;
+    padding: 5px;
+
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+/* Button Styles */
+button {
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.5rem;
+    border: none;
+    margin: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* جعل زر الإضافة في اليمين */
+.add-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.bg-blue-500 {
+    background-color: #4f46e5;
+    color: white;
+}
+
+.bg-blue-500:hover {
+    background-color: #4338ca;
+}
+
+.bg-gray-300 {
+    background-color: #d1d5db;
+    color: #1f2937;
+}
+
+.bg-gray-300:hover {
+    background-color: #9ca3af;
+}
+
+.bg-yellow-500 {
+    background-color: #fbbf24;
+    color: white;
+}
+
+.bg-yellow-500:hover {
+    background-color: #d97706;
+}
+
+.bg-red-500 {
+    background-color: #ef4444;
+    color: white;
+}
+
+.bg-red-500:hover {
+    background-color: #dc2626;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+table th {
+    background-color: #f9fafb;
+    font-weight: 700;
+}
+
+table tr:nth-child(even) {
+    background-color: #f3f4f6;
+}
+
+table tr:hover {
+    background-color: #e5e7eb;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-container {
+    background-color: #ffffff;
+    width: 30rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: scaleIn 0.4s ease-in-out;
+}
+
+@keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+}
+
+.modal-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #1f2937;
+    text-align: center;
+}
+
+.modal-body {
+    font-size: 1rem;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-around;
+}
+
+.modal-button {
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-button.cancel {
+    background-color: #ef4444;
+    color: white;
+}
+
+.modal-button.cancel:hover {
+    background-color: #dc2626;
+}
+
+.modal-button.confirm {
+    background-color: #4f46e5;
+    color: white;
+}
+
+.modal-button.confirm:hover {
+    background-color: #4338ca;
+}
+
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #9ca3af;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #6b7280;
+}
+
+/* Input Styles */
+input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 4px rgba(79, 70, 229, 0.5);
+    outline: none;
+}
+
+/* إضافة العنوان */
+h1.page-header {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1e293b;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
